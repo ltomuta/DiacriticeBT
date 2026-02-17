@@ -41,6 +41,8 @@ A Chrome Extension that automatically replaces Romanian diacritics in input fiel
    - Example: `constituție` → `constitutie`
    - Example: `împrumut` → `imprumut`
 
+<img width="3834" height="2058" alt="image" src="https://github.com/user-attachments/assets/670e3bc4-6a0d-4e18-a6d6-459d39259961" />
+
 ## Files
 
 - `manifest.json` - Extension configuration file
