@@ -9,20 +9,33 @@
 ### Test Cases
 
 #### Test 1: Basic Character Replacement
-1. Type `ț` in any input field
-2. ✓ Expected: Should be automatically replaced with `t`
-3. Type `Ț` in any input field
-4. ✓ Expected: Should be automatically replaced with `T`
+1. Type Romanian diacritics in any input field:
+   - `ț` → ✓ Expected: Should become `t`
+   - `Ț` → ✓ Expected: Should become `T`
+   - `ă` → ✓ Expected: Should become `a`
+   - `Ă` → ✓ Expected: Should become `A`
+   - `â` → ✓ Expected: Should become `a`
+   - `Â` → ✓ Expected: Should become `A`
+   - `î` → ✓ Expected: Should become `i`
+   - `Î` → ✓ Expected: Should become `I`
+   - `ș` → ✓ Expected: Should become `s`
+   - `Ș` → ✓ Expected: Should become `S`
 
 #### Test 2: Multiple Characters
 1. Type `țară` in an input field
-2. ✓ Expected: Should become `tară`
+2. ✓ Expected: Should become `tara`
 3. Type `constituție` in an input field
 4. ✓ Expected: Should become `constitutie`
+5. Type `România` in an input field
+6. ✓ Expected: Should become `Romania`
+7. Type `împrumut` in an input field
+8. ✓ Expected: Should become `imprumut`
+9. Type `depășire` in an input field
+10. ✓ Expected: Should become `depasire`
 
 #### Test 3: Password Fields
-1. Type `ț` in a password field
-2. ✓ Expected: Should NOT be replaced, remains as `ț`
+1. Type `ț` or other diacritics in a password field
+2. ✓ Expected: Should NOT be replaced, remains unchanged
 
 #### Test 4: Cursor Position
 1. Type `xțx` in an input field
@@ -32,12 +45,12 @@
 
 #### Test 5: Dynamic Input Fields
 1. On test.html, click "Add New Input Field"
-2. Type `ț` in the newly added field
-3. ✓ Expected: Should be replaced with `t`
+2. Type diacritics in the newly added field
+3. ✓ Expected: Should be replaced correctly
 
 #### Test 6: Textarea
-1. Type `ț` in a textarea element
-2. ✓ Expected: Should be replaced with `t`
+1. Type diacritics in a textarea element
+2. ✓ Expected: Should be replaced correctly
 
 ### Browser Console Verification
 1. Open Chrome DevTools (F12)
@@ -49,7 +62,7 @@ Run `node test.js` to verify the replacement logic.
 
 ## Known Limitations
 - Only works on https://www.bancatransilvania.ro/* domains
-- Only replaces `ț` character (as per requirements)
+- Replaces Romanian diacritics: ț, ă, â, î, ș
 - Does not modify password fields (by design)
 
 ## Troubleshooting

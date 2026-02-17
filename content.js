@@ -1,17 +1,27 @@
 // Content script for replacing Romanian diacritics on Banca Transilvania website
-// Replaces ț with t in non-password input fields
+// Replaces Romanian diacritics (ț, ă, â, î, ș) with regular characters in non-password input fields
 
 (function() {
   'use strict';
 
   /**
-   * Replace ț with t in a string
+   * Replace Romanian diacritics with regular characters
    * @param {string} text - The text to process
    * @returns {string} The processed text
    */
   function replaceDiacritics(text) {
     if (!text) return text;
-    return text.replace(/ț/g, 't').replace(/Ț/g, 'T');
+    return text
+      .replace(/ț/g, 't')
+      .replace(/Ț/g, 'T')
+      .replace(/ă/g, 'a')
+      .replace(/Ă/g, 'A')
+      .replace(/â/g, 'a')
+      .replace(/Â/g, 'A')
+      .replace(/î/g, 'i')
+      .replace(/Î/g, 'I')
+      .replace(/ș/g, 's')
+      .replace(/Ș/g, 'S');
   }
 
   /**
@@ -34,7 +44,7 @@
     if (originalValue !== newValue) {
       input.value = newValue;
       
-      // Since ț and t are both single characters, cursor position remains the same
+      // Since all diacritics are single-character replacements, cursor position remains the same
       input.setSelectionRange(cursorPosition, cursorPosition);
     }
   }

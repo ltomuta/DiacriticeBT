@@ -4,7 +4,12 @@ A Chrome Extension that automatically replaces Romanian diacritics in input fiel
 
 ## Features
 
-- Automatically replaces `ț` with `t` (both lowercase and uppercase) in real-time
+- Automatically replaces Romanian diacritics in real-time:
+  - `ț` → `t` / `Ț` → `T`
+  - `ă` → `a` / `Ă` → `A`
+  - `â` → `a` / `Â` → `A`
+  - `î` → `i` / `Î` → `I`
+  - `ș` → `s` / `Ș` → `S`
 - Works on all input fields except password fields
 - Maintains cursor position during replacement
 - Supports dynamically added input fields (SPAs and AJAX forms)
@@ -31,8 +36,10 @@ A Chrome Extension that automatically replaces Romanian diacritics in input fiel
 
 1. Navigate to https://www.bancatransilvania.ro/
 2. Type in any input field (except password fields)
-3. When you type `ț`, it will automatically be replaced with `t`
-4. The same applies for uppercase: `Ț` → `T`
+3. Romanian diacritics are automatically replaced:
+   - Example: `România` → `Romania`
+   - Example: `constituție` → `constitutie`
+   - Example: `împrumut` → `imprumut`
 
 ## Files
 
@@ -45,7 +52,7 @@ A Chrome Extension that automatically replaces Romanian diacritics in input fiel
 The extension uses a content script that:
 1. Monitors all input and textarea elements on the page
 2. Listens for input events on non-password fields
-3. Replaces `ț` characters with `t` while preserving cursor position
+3. Replaces Romanian diacritics with their ASCII equivalents while preserving cursor position
 4. Uses MutationObserver to handle dynamically added input fields
 
 ## Privacy

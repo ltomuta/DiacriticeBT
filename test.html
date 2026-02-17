@@ -46,20 +46,20 @@
 
     <div class="test-section">
         <h2>Test Input Field</h2>
-        <label for="test-input">Regular Input (try typing "ț" or "Ț"):</label>
-        <input type="text" id="test-input" placeholder="Type here: ț should become t">
+        <label for="test-input">Regular Input (try typing Romanian diacritics):</label>
+        <input type="text" id="test-input" placeholder="Type: ț, ă, â, î, ș - will be replaced">
     </div>
 
     <div class="test-section">
         <h2>Test Textarea</h2>
-        <label for="test-textarea">Textarea (try typing "ț" or "Ț"):</label>
-        <textarea id="test-textarea" rows="4" placeholder="Type here: ț should become t"></textarea>
+        <label for="test-textarea">Textarea (try typing Romanian diacritics):</label>
+        <textarea id="test-textarea" rows="4" placeholder="Type: ț, ă, â, î, ș - will be replaced"></textarea>
     </div>
 
     <div class="test-section">
         <h2>Password Field (Should NOT be affected)</h2>
         <label for="test-password">Password Field:</label>
-        <input type="password" id="test-password" placeholder="Typing ț here should keep it as ț">
+        <input type="password" id="test-password" placeholder="Diacritics here should NOT be replaced">
     </div>
 
     <div class="test-section">
@@ -71,9 +71,12 @@
     <div class="test-section">
         <h2>Test Examples</h2>
         <ul>
-            <li>Type: <strong>țară</strong> → Should become: <strong>tară</strong></li>
+            <li>Type: <strong>țară</strong> → Should become: <strong>tara</strong></li>
             <li>Type: <strong>Țara</strong> → Should become: <strong>Tara</strong></li>
             <li>Type: <strong>constituție</strong> → Should become: <strong>constitutie</strong></li>
+            <li>Type: <strong>România</strong> → Should become: <strong>Romania</strong></li>
+            <li>Type: <strong>Împrumut</strong> → Should become: <strong>Imprumut</strong></li>
+            <li>Type: <strong>depășire</strong> → Should become: <strong>depasire</strong></li>
         </ul>
     </div>
 
@@ -83,7 +86,7 @@
             const container = document.getElementById('dynamic-container');
             const input = document.createElement('input');
             input.type = 'text';
-            input.placeholder = 'Dynamically added input - try typing ț';
+            input.placeholder = 'Dynamically added input - try typing diacritics';
             input.style.marginTop = '10px';
             container.appendChild(input);
         });

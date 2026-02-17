@@ -6,7 +6,7 @@
 Create a Chrome Extension that:
 - Runs on https://www.bancatransilvania.ro/
 - Monitors all input fields (except password fields)
-- Replaces Romanian character `ț` with `t` in real-time
+- Replaces Romanian diacritics (ț, ă, â, î, ș) with regular characters in real-time
 
 ### Solution Implemented
 
@@ -20,7 +20,12 @@ Create a Chrome Extension that:
 7. **TESTING.md** - Comprehensive testing guide
 
 #### Key Features:
-✅ Real-time character replacement (ț → t, Ț → T)
+✅ Real-time character replacement for all Romanian diacritics:
+  - ț → t, Ț → T
+  - ă → a, Ă → A
+  - â → a, Â → A
+  - î → i, Î → I
+  - ș → s, Ș → S
 ✅ Password field exclusion for security
 ✅ Cursor position preservation
 ✅ Dynamic input field handling (MutationObserver)
@@ -36,7 +41,7 @@ Create a Chrome Extension that:
 - **Security**: CodeQL scan passed with 0 vulnerabilities
 
 #### Testing:
-- All automated tests pass ✓
+- All automated tests pass (20/20) ✓
 - Code review completed and feedback addressed ✓
 - Security scan completed with no issues ✓
 - Manual testing guide provided ✓
@@ -45,7 +50,7 @@ Create a Chrome Extension that:
 1. Clone the repository
 2. Load unpacked extension in Chrome (chrome://extensions/)
 3. Navigate to https://www.bancatransilvania.ro/
-4. Type in any input field - ț will automatically become t
+4. Type in any input field - Romanian diacritics will automatically be replaced
 
 ### Code Quality:
 - JSDoc comments for all functions
