@@ -26,6 +26,11 @@
       return;
     }
 
+    // Avoid infinite loops - skip if we triggered this event
+    if (event.isTrusted === false && event.type === 'input') {
+      return;
+    }
+
     const cursorPosition = input.selectionStart;
     const originalValue = input.value;
     const newValue = replaceDiacritics(originalValue);
@@ -41,9 +46,6 @@
       const newCursorPosition = cursorPosition - (beforeCursor.length - newBeforeCursor.length);
       
       input.setSelectionRange(newCursorPosition, newCursorPosition);
-      
-      // Trigger input event to ensure any listeners are notified
-      input.dispatchEvent(new Event('input', { bubbles: true }));
     }
   }
 
