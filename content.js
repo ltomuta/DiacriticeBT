@@ -26,11 +26,6 @@
       return;
     }
 
-    // Avoid infinite loops - skip if we triggered this event
-    if (event.isTrusted === false && event.type === 'input') {
-      return;
-    }
-
     const cursorPosition = input.selectionStart;
     const originalValue = input.value;
     const newValue = replaceDiacritics(originalValue);
@@ -39,13 +34,8 @@
     if (originalValue !== newValue) {
       input.value = newValue;
       
-      // Restore cursor position
-      // Adjust cursor position if characters were replaced before cursor
-      const beforeCursor = originalValue.substring(0, cursorPosition);
-      const newBeforeCursor = replaceDiacritics(beforeCursor);
-      const newCursorPosition = cursorPosition - (beforeCursor.length - newBeforeCursor.length);
-      
-      input.setSelectionRange(newCursorPosition, newCursorPosition);
+      // Since ț and t are both single characters, cursor position remains the same
+      input.setSelectionRange(cursorPosition, cursorPosition);
     }
   }
 

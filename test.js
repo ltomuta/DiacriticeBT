@@ -34,9 +34,10 @@ console.log('  Password fields are excluded in the handleInput function by check
 
 // Test 3: Cursor position preservation
 console.log('\nTest 3: Cursor position preservation');
-console.log('  Cursor position is adjusted based on the number of characters replaced before the cursor');
-console.log('  Example: If cursor is at position 5 in "constituție" and "ț" at position 7 is replaced,');
-console.log('  the cursor should remain at position 5');
+console.log('  Since ț and t are both single-character replacements,');
+console.log('  the cursor position remains unchanged after replacement');
+console.log('  Example: If cursor is at position 5 in "constituție",');
+console.log('  it will remain at position 5 after replacement to "constitutie"');
 
 // Test 4: Dynamic input handling
 console.log('\nTest 4: Dynamic input handling');
