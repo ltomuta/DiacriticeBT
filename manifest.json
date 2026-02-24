@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Diacritice BT",
   "version": "1.0.0",
-  "description": "Replaces Romanian diacritics (ț, ă, â, î, ș) with regular characters in input fields on Banca Transilvania website",
+  "description": "Replaces Romanian and Hungarian diacritics (ț, ă, â, î, ș, á, é, í, ó, ö, ő, ú, ü, ű) with regular characters in input fields on Banca Transilvania website",
   "permissions": [],
   "host_permissions": [
     "https://www.bancatransilvania.ro/*"

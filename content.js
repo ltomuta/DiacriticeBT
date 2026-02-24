@@ -1,11 +1,11 @@
-// Content script for replacing Romanian diacritics on Banca Transilvania website
-// Replaces Romanian diacritics (ț, ă, â, î, ș) with regular characters in non-password input fields
+// Content script for replacing Romanian and Hungarian diacritics on Banca Transilvania website
+// Replaces Romanian diacritics (ț, ă, â, î, ș) and Hungarian diacritics (á, é, í, ó, ö, ő, ú, ü, ű) with regular characters in non-password input fields
 
 (function() {
   'use strict';
 
   /**
-   * Replace Romanian diacritics with regular characters
+   * Replace Romanian and Hungarian diacritics with regular characters
    * @param {string} text - The text to process
    * @returns {string} The processed text
    */
@@ -21,7 +21,25 @@
       .replace(/î/g, 'i')
       .replace(/Î/g, 'I')
       .replace(/ș/g, 's')
-      .replace(/Ș/g, 'S');
+      .replace(/Ș/g, 'S')
+      .replace(/á/g, 'a')
+      .replace(/Á/g, 'A')
+      .replace(/é/g, 'e')
+      .replace(/É/g, 'E')
+      .replace(/í/g, 'i')
+      .replace(/Í/g, 'I')
+      .replace(/ó/g, 'o')
+      .replace(/Ó/g, 'O')
+      .replace(/ö/g, 'o')
+      .replace(/Ö/g, 'O')
+      .replace(/ő/g, 'o')
+      .replace(/Ő/g, 'O')
+      .replace(/ú/g, 'u')
+      .replace(/Ú/g, 'U')
+      .replace(/ü/g, 'u')
+      .replace(/Ü/g, 'U')
+      .replace(/ű/g, 'u')
+      .replace(/Ű/g, 'U');
   }
 
   /**

@@ -25,7 +25,28 @@ const testCases = [
   { input: 'depășire', expected: 'depasire' },
   { input: 'no diacritics', expected: 'no diacritics' },
   { input: '', expected: '' },
-  { input: null, expected: null }
+  { input: null, expected: null },
+  // Hungarian diacritics
+  { input: 'á', expected: 'a' },
+  { input: 'Á', expected: 'A' },
+  { input: 'é', expected: 'e' },
+  { input: 'É', expected: 'E' },
+  { input: 'í', expected: 'i' },
+  { input: 'Í', expected: 'I' },
+  { input: 'ó', expected: 'o' },
+  { input: 'Ó', expected: 'O' },
+  { input: 'ö', expected: 'o' },
+  { input: 'Ö', expected: 'O' },
+  { input: 'ő', expected: 'o' },
+  { input: 'Ő', expected: 'O' },
+  { input: 'ú', expected: 'u' },
+  { input: 'Ú', expected: 'U' },
+  { input: 'ü', expected: 'u' },
+  { input: 'Ü', expected: 'U' },
+  { input: 'ű', expected: 'u' },
+  { input: 'Ű', expected: 'U' },
+  { input: 'árvíztűrő tükörfúrógép', expected: 'arvizturo tukorfurogep' },
+  { input: 'ÁRVÍZTŰRŐ TÜKÖRFÚRÓGÉP', expected: 'ARVIZTURO TUKORFUROGEP' },
 ];
 
 function replaceDiacritics(text) {
@@ -40,7 +61,25 @@ function replaceDiacritics(text) {
     .replace(/î/g, 'i')
     .replace(/Î/g, 'I')
     .replace(/ș/g, 's')
-    .replace(/Ș/g, 'S');
+    .replace(/Ș/g, 'S')
+    .replace(/á/g, 'a')
+    .replace(/Á/g, 'A')
+    .replace(/é/g, 'e')
+    .replace(/É/g, 'E')
+    .replace(/í/g, 'i')
+    .replace(/Í/g, 'I')
+    .replace(/ó/g, 'o')
+    .replace(/Ó/g, 'O')
+    .replace(/ö/g, 'o')
+    .replace(/Ö/g, 'O')
+    .replace(/ő/g, 'o')
+    .replace(/Ő/g, 'O')
+    .replace(/ú/g, 'u')
+    .replace(/Ú/g, 'U')
+    .replace(/ü/g, 'u')
+    .replace(/Ü/g, 'U')
+    .replace(/ű/g, 'u')
+    .replace(/Ű/g, 'U');
 }
 
 testCases.forEach(test => {
