@@ -1,6 +1,6 @@
 # DiacriticeBT
 
-A Chrome Extension that automatically replaces Romanian diacritics in input fields on the Banca Transilvania website (https://www.bancatransilvania.ro/).
+A Chrome Extension that automatically replaces Romanian and Hungarian diacritics in input fields on the Banca Transilvania website (https://www.bancatransilvania.ro/).
 
 ## Features
 
@@ -10,6 +10,16 @@ A Chrome Extension that automatically replaces Romanian diacritics in input fiel
   - `â` → `a` / `Â` → `A`
   - `î` → `i` / `Î` → `I`
   - `ș` → `s` / `Ș` → `S`
+- Automatically replaces Hungarian diacritics in real-time:
+  - `á` → `a` / `Á` → `A`
+  - `é` → `e` / `É` → `E`
+  - `í` → `i` / `Í` → `I`
+  - `ó` → `o` / `Ó` → `O`
+  - `ö` → `o` / `Ö` → `O`
+  - `ő` → `o` / `Ő` → `O`
+  - `ú` → `u` / `Ú` → `U`
+  - `ü` → `u` / `Ü` → `U`
+  - `ű` → `u` / `Ű` → `U`
 - Works on all input fields except password fields
 - Maintains cursor position during replacement
 - Supports dynamically added input fields (SPAs and AJAX forms)
